@@ -1,0 +1,9 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1310
+
+Note: This script is obsolete.
+
+If you need syntax file for DataStage go at vimscript #2161. The file includes DataStage Basic and Parallel functions plus DSX syntax.
+
+If you need just syntax for Universe Basic go at vimscript #2143.
+
+
