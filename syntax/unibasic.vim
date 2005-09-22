@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Universe Basic (Used also in DataStage)
 " Maintainer:	L. Husar <lh3@atlas.cz>
-" Last Change:	6/22/2005 10:00AM
+" Last Change:	9/22/2005 10:02AM
 
 
 " For version 5.x: Clear all syntax items
@@ -10,6 +10,12 @@ if version < 600
   syntax clear
 elseif exists("b:current_syntax")
   finish
+endif
+
+if version >= 600
+  setlocal iskeyword+=.
+else
+  set iskeyword+=.
 endif
 
 syn case ignore
@@ -82,11 +88,12 @@ syn match  basicSpecial         "DSJ\.PARAMVALUE"
 syn match  basicSpecial         "DSU\."
 syn match  basicSpecial         "DSX\."
 syn match  basicSpecial         "\w*\:"
-syn keyword basicSpecial        DSLogInfo DSLogFatal DSLogWarning DSExecute 
+syn keyword basicSpecial        DSLogInfo DSLogFatal DSLogWarn DSExecute 
 
 syn match  basicSpecial         "@DATE"
 syn match  basicSpecial         "@FM"
 syn match  basicSpecial         "@VM"
+syn match  basicSpecial         "@NULL"
 
 "syn region  basicString		start=+"+  skip=+\\\\\|\\"+  end=+"+  contains=basicSpecial
 "syn region  basicString		start=+'+  end=+'+  contains=basicSpecial
