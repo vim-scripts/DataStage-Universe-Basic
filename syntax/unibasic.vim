@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Universe Basic (Used also in DataStage)
 " Maintainer:	L. Husar <lh3@atlas.cz>
-" Last Change:	9/30/2005 3:50PM
+" Last Change:	2006-03-23 10:49
 
 
 " For version 5.x: Clear all syntax items
@@ -102,8 +102,13 @@ syn region  basicString		start=+"+  end=+"+
 syn region  basicString		start=+'+  end=+'+  
 syn region  basicString		start=+\\+  end=+\\+  
 
-syn region  basicComment	start="REM\s" end="$" contains=basicTodo
-syn region  basicComment	start="*" end="$" contains=basicTodo
+"syn region  basicComment	start="REM\s" end="$" contains=basicTodo
+"syn region  basicComment	start="*" end="$" contains=basicTodo
+syn region  basicComment start="\%(^\|;\zs\)\s*REM\s" end="$" contains=basicTodo
+syn region  basicComment start="\%(^\|;\zs\)\s*\*" end="$" contains=basicTodo
+syn region  basicComment start="\%(^\|;\zs\)\s*!" end="$" contains=basicTodo
+syn region  basicComment start="\%(^\|;\zs\)\s*\$\*" end="$" contains=basicTodo
+
 
 
 " Define the default highlighting.
